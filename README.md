@@ -64,3 +64,19 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+ADMIN-APP WITH BACKPACK CRUD
+
+## Requirement
+
+- XAMPP
+- Laravel
+
+## How to Access Admin App UI
+
+- Turn on XAMPP Apache and MySQL
+- Go to http://localhost/admin-app/public/admin/login
+- Insert email and password
+    email: admin@gmail.com
+    password: admin
+- Done
