@@ -17,9 +17,17 @@
 ## How to Create New CRUD
 
 - Open terminal and execute this code 
-1. php artisan make:migration:schema create_tags_table --schema="name:string:unique"
+1. php artisan make:migration create_(insert table name here)_table (plural name if possible)
 2. php artisan migrate
-3. php artisan backpack:crud tag
+3. php artisan backpack:crud (table name) (singular name)
+4. php artisan backpack:build
+
+## How to add new fields into existing table
+
+- Open terminal and execute this code
+1. php artisan make:migration add_fields_to_biodata_table --table=biodata
+2. Define the Columns in the Migration file as you like.
+3. Run the Migration.
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 

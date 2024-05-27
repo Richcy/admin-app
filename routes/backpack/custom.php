@@ -16,7 +16,9 @@ Route::group([
     ),
     'namespace' => 'App\Http\Controllers\Admin',
 ], function () { // custom admin routes
+    Route::crud('biodata-pegawai', 'BiodataPegawaiCrudController');
     Route::crud('user', 'UserCrudController');
-    Route::crud('tag', 'TagCrudController');
-    Route::crud('biodata', 'BiodataCrudController');
+    Route::crud('pendidikan-pegawai', 'PendidikanPegawaiCrudController');
+    Route::crud('sertifikat-pegawai', 'SertifikatPegawaiCrudController');
+    Route::crud('jabatan-pegawai', 'JabatanPegawaiCrudController');
 }); // this should be the absolute last line of this file

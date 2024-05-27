@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\TagRequest;
+use App\Http\Requests\SertifikatPegawaiRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class TagCrudController
+ * Class SertifikatPegawaiCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class TagCrudController extends CrudController
+class SertifikatPegawaiCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +26,9 @@ class TagCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Tag::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/tag');
-        CRUD::setEntityNameStrings('tag', 'tags');
+        CRUD::setModel(\App\Models\SertifikatPegawai::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/sertifikat-pegawai');
+        CRUD::setEntityNameStrings('sertifikat pegawai', 'sertifikat pegawais');
     }
 
     /**
@@ -55,7 +55,7 @@ class TagCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        // CRUD::setValidation(TagRequest::class);
+        CRUD::setValidation();
         CRUD::setFromDb(); // set fields from db columns.
 
         /**

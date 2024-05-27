@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\BiodataRequest;
+use App\Http\Requests\PendidikanPegawaiRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class BiodataCrudController
+ * Class PendidikanPegawaiCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class BiodataCrudController extends CrudController
+class PendidikanPegawaiCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +26,9 @@ class BiodataCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Biodata::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/biodata');
-        CRUD::setEntityNameStrings('biodata', 'biodatas');
+        CRUD::setModel(\App\Models\PendidikanPegawai::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/pendidikan-pegawai');
+        CRUD::setEntityNameStrings('pendidikan pegawai', 'pendidikan pegawais');
     }
 
     /**
@@ -55,7 +55,7 @@ class BiodataCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(BiodataRequest::class);
+        CRUD::setValidation();
         CRUD::setFromDb(); // set fields from db columns.
 
         /**

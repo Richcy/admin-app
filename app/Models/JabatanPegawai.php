@@ -6,7 +6,7 @@ use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Biodata extends Model
+class JabatanPegawai extends Model
 {
     use CrudTrait;
     use HasFactory;
@@ -17,10 +17,10 @@ class Biodata extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'biodatas';
+    protected $table = 'jabatan_pegawais';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
-    protected $guarded = ['id'];
+    protected $guarded = ['id', 'created_at', 'updated_at'];
     // protected $fillable = [];
     // protected $hidden = [];
 
@@ -35,6 +35,11 @@ class Biodata extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+
+    public function biodataPegawai()
+    {
+        return $this->belongsTo(BiodataPegawai::class);
+    }
 
     /*
     |--------------------------------------------------------------------------
